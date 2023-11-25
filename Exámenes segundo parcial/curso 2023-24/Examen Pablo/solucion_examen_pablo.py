@@ -100,6 +100,8 @@ def guardar_continentes(continentes):
         linea = f'{nombre_continente};{pib_continente};\n'
 
         archivo.write(linea)
+
+    archivo.close()
     return None
 
 guardar_continentes(continentes) # No devuelve nada, crea continentes.csv
