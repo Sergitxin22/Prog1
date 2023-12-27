@@ -64,11 +64,21 @@ vuelos = [vuelo1, vuelo2, vuelo3, vuelo4, vuelo5]
 EJERCICIO 1
 """
 def calculo_capacidad_aeropuerto(vuelos):
-    capacidad_disponible = 0
-    
-    return capacidad_disponible
+    """ calcula la capacidad disponible del aeropuerto """
+    # Creamos una variable para contar los pasajeros
+    total_pasajeros = 0
+    # Recorremos cada vuelo de la lista de vuelos...
+    for vuelo in vuelos:
+        # Contamos los pasajeros totales del vuelo
+        pasajeros_vuelo = len(vuelo["pasajeros"])
+        # Los sumamos al total
+        total_pasajeros += pasajeros_vuelo
+    # La capacidad es el % de pasajeros respectos al máximo
+    capacidad = total_pasajeros / 100
+    # Devolvemos la capacidad
+    return capacidad
 
-# print(calculo_capacidad_aeropuerto(vuelos)) # Devuelve 0.4
+# print(calculo_capacidad_aeropuerto(vuelos)) # Devuelve 0.04
 
 """
 EJERCICIO 2
@@ -141,5 +151,5 @@ def calcular_itinerarios(vuelos, origen, destino):
     else:
         print("No se han encontrado conexiones para esas ciudades")
 
-calcular_itinerarios(vuelos, "Madrid", "Londres")
-calcular_itinerarios(vuelos, "Madrid", "Bilbao")
+# calcular_itinerarios(vuelos, "Madrid", "Londres")
+# calcular_itinerarios(vuelos, "Madrid", "Bilbao")
